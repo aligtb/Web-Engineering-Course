@@ -1,0 +1,25 @@
+# Node.js dependencies
+node_modules/
+
+# Dev container and GitHub config
+.devcontainer/
+.github/
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
