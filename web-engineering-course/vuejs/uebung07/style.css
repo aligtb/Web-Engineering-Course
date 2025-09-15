@@ -1,0 +1,54 @@
+.gridContainer {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    
+
+}
+
+.gridItem {
+    border: solid 2px rebeccapurple;
+}
+
+header h1 {
+    text-decoration: underline;
+    font-family: sans-serif;
+}
+
+#app {
+    max-width: 600 px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.post {
+    font-family: sans-serif;
+    background: rgb(227, 227, 227);
+    border: 1px solid black;
+    max-width: 600px;
+    padding: 25px;
+    margin-bottom: 25px;
+   
+    
+}
+
+
+hr{
+    width: 75%;
+    text-align: left;
+    margin-left: auto;
+}
+
+#addpost {
+    background-color: rgb(227, 227, 250);
+    padding-top: 5px;
+    padding-right: auto;
+    padding-bottom: 10px;
+}
+
+#addpost textarea {
+    display: block;
+    width: 90%;
+    margin-top: 20px;
+    margin: auto;
+}
