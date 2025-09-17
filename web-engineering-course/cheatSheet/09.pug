@@ -1,0 +1,16 @@
+//- 09 🔹 Include film.pug and render film list
+include film.pug
+html
+    head
+        style.
+            .filmBorder {
+                border: 2px solid lavender;
+                background-color: #88E;
+                padding: 8px;
+                margin: 8px
+            }
+
+    body 
+        h1 #{name}    //- Title of film library
+        each item in items   //- Loop through films
+            +Film(item.titel, item.datum, item.regie)   //- Call Film mixin

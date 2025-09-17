@@ -1,0 +1,42 @@
+<!-- HTML5 + Vue.js App: Crypto Clicker -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Crypto Clicker 3.0</title>
+    <link rel="stylesheet" href="clicker.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrapper" v-bind:class="{darkmode: this.darkModeEnabled}">
+        <h1 class="title">Crypto Clicker 3.0</h1>
+        <div class="spielfeld">
+          <p>{{cryptoCoins}} Crypto Coins</p>
+          <p>Aktuelle Crypto Coins per Click: {{cryptoPerClick}}</p>
+          <button v-on:click="mineCrypto">Mine Cryptocoin</button>
+          <ul><li v-for="(value, key) in gekauft">{{value}} {{key}}</li></ul>
+        </div>
+
+        <div class="upgrades">
+          <div v-for="equip in equipment">
+            <!-- Fehlerhinweis: statt equip.cost → equip.preis -->
+            <button 
+              v-on:click="buyCryptoEquipment(equip)"
+              v-bind:disabled="this.cryptoCoins < equip.preis">
+              {{equip.name}} ({{equip.preis}}) / +{{equip.modifikator}}
+            </button>
+          </div>
+          <p>{{infoText}}</p>
+        </div>
+      </div>
+
+      <!-- Optionen-Toggle -->
+      <button v-on:click="optionenAufgeklappt = !optionenAufgeklappt">Optionen</button>
+      <button v-if="optionenAufgeklappt" v-on:click="darkModeEnabled = !darkModeEnabled">
+        Dark Mode
+      </button>
+    </div>
+    <script type="text/javascript" src="clicker.js"></script>
+  </body>
+</html>

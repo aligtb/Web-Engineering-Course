@@ -1,0 +1,14 @@
+/* CSS Layout & Darkmode */
+* { font-family: 'Courier New', Courier, monospace; }
+.title, .spielfeld, .upgrades, .options {
+  padding: 16px; border: solid black 1px;}
+.spielfeld { grid-area: spielfeld; }
+.spielfeld button { width: 256px; height: 32px; margin: 4px; }
+.upgrades { grid-area: upgrades; }
+.upgrades button { width: 90%; height: 32px; margin: 4px; }
+.title { grid-area: title; }
+.options { grid-area: options; }
+.wrapper {  display: grid; grid-gap: 20px;
+  grid-template-areas: "title title" "spielfeld upgrades" "options options";
+  grid-template-columns: auto 350px; } /* Dark Mode Theme */
+.darkmode { background-color: midnightblue; color: azure; }

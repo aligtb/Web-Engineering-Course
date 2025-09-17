@@ -1,0 +1,71 @@
+<!-- HTML5 / CSS: Responsive Grid Layout with Header, Nav, Content, Sidebars, and Footer -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Grid Layout</title>
+  <link rel="stylesheet" href="grid.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .wrapper {
+      max-width: 1024px; margin: 0 auto; font: 1.2em sans-serif;
+      display: grid; grid-template-columns: 150px auto;
+      /* Named grid areas make layout readable */
+      grid-template-areas: 
+        "header header"
+        "nav    nav"
+        "side   content"
+        "side2  content"
+        "footer footer";
+      grid-gap: 16px;
+    }
+    .head { grid-area: header; }
+    .nav { grid-area: nav; }
+    .content { grid-area: content; }
+    .side:nth-child(1) { grid-area: side; }   /* First sidebar */
+    .side:nth-child(2) { grid-area: side2; }  /* Second sidebar */
+    .footer { grid-area: footer; }
+
+    .wrapper > * {
+      border: 2px solid black; background: #BBB; border-radius: 5px; padding: 10px;
+    }
+
+    nav ul {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; justify-content: space-between;
+    }
+
+    /* Responsive: collapse to single column on small screens */
+    @media (max-width: 500px) {
+      nav ul { flex-direction: column; }
+      .wrapper {
+        grid-template-columns: auto;
+        grid-template-areas: 
+          "header" "nav" "content" "side" "side2" "footer";
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="head">The header</header>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Nav 1</a></li>
+        <li><a href="#">Nav 2</a></li>
+        <li><a href="#">Nav 3</a></li>
+      </ul>
+    </nav>
+    <article class="content">
+      <h1>Main Article</h1>
+      <p>Lorem ipsum filler text for layout demonstration.</p>
+      <p>Typically scrambled Latin text used in typesetting.</p>
+      <p>Popularized since the 1960s for design mockups.</p>
+    </article>
+    <aside class="side">Sidebar</aside>
+    <aside class="side">Sidebar 2</aside>
+    <footer class="footer">The footer</footer>
+  </div>
+</body>
+</html>

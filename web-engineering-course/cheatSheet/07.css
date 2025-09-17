@@ -1,0 +1,11 @@
+/* U07 CSS: Blog Layout & Styling */
+#app { max-width: 600px; margin: 0 auto; }
+header h1 { font-family: sans-serif; text-decoration: underline; }
+.post {
+  border: 1px solid lightgray; border-radius: 8px;
+  padding: 4px 16px; margin: 32px 4px;}
+.postinhalt > h2 { font-family: sans-serif; }
+.kommentar { margin-left: 32px; margin-bottom: 4px; color: #666; }
+.kommentar > .autor { font-family: sans-serif; text-decoration: underline; font-size: 10pt; }
+.kommentar > .inhalt { font-size: 10pt; }
+.neuerKommentar { margin-left: 32px; }

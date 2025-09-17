@@ -1,0 +1,33 @@
+<!-- U08 -- HTML5: Film Archiv UI -->
+<!DOCTYPE html><html>
+  <head>    <meta charset="utf-8">
+    <title>Film Archiv</title>
+    <style>      /* simple table styling */
+      table,th,td { border: 1px solid black; }
+      th,td { padding: 5px; }
+    </style>  </head>
+  <body>
+    <div id="film"></div>    <!-- navigation -->
+    <div>
+      <input type="button" value="Previous" id="previous">
+      <input type="button" value="Next" id="next">
+    </div>    <!-- film edit/delete -->
+    <div>
+      <table>
+        <tr><td><input type="text" id="filmTitelInput"></td><td><p>
+            Film Titel</p></td></tr>
+        <tr><td><input type="text" id="filmDatumInput"></td><td><p>
+            Erscheinungsdatum</p></td></tr>
+        <tr><td><input type="text" id="filmRegieInput"></td><td><p>
+            Regie</p></td></tr>
+      </table><br>
+      <input type="button" value="Edit Film" id="editFilm">
+      <input type="button" value="Delete Film" id="deleteFilm">
+    </div>    <!-- show all films -->
+    <div>
+      <input type="button" value="Show All Films" id="allFilms"><br><br>
+      <table id="filmTable"></table>
+    </div>
+    <script src="filmArchiv.js"></script>
+    <!-- <script src="modifyFilmArchiv.js"></script> -->
+  </body></html>
